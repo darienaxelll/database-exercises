@@ -1,3 +1,5 @@
+TRUNCATE TABLE albums;
+
 INSERT INTO albums (artist_name, album_name, release_date, sales, genre)
 VALUES ('Thiller', 'Micheal Jackson', 1982,70,'Pop/Funk'),
        ('AC/DC', 'Black in Black', 1980,50,'Hard Rock'),
