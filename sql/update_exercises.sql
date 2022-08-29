@@ -1,6 +1,7 @@
 SELECT * FROM albums;
 UPDATE albums
 SET sales =  (sales * 10)
+WHERE 1 != 1;
 
 SELECT * FROM albums WHERE release_date < 1980;
 UPDATE albums

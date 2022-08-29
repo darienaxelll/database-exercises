@@ -1,3 +1,5 @@
+use darien
+
 DROP TABLE IF EXISTS quotes;
 
 CREATE TABLE IF NOT EXISTS albums (
