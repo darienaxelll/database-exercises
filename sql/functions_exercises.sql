@@ -12,7 +12,7 @@ WHERE last_name LIKE 'E%'
    OR last_name LIKE '%E'
 ORDER BY emp_no DESC;
 
-SELECT CONCAT(first_name, last_name)
+SELECT CONCAT_WS(' ', first_name, last_name)
 FROM employees
 WHERE last_name LIKE 'E%'
   AND last_name LIKE '%E';
@@ -22,23 +22,22 @@ FROM employees
 WHERE last_name LIKE '%q%'
   AND NOT last_name LIKE '%qu%';
 
-SELECT first_name, last_name, birth_date
+SELECT CONCAT_WS(' ', first_name, last_name) AS Name, birth_date
 FROM employees
 WHERE MONTH(birth_date) = 12
 AND DAY(birth_date) = 25;
 
-SELECT first_name, last_name, hire_date
+SELECT CONCAT_WS(' ', first_name, last_name) AS Name, hire_date, birth_date
 FROM employees
 WHERE YEAR(hire_date) BETWEEN 1990 AND 1999
 AND (MONTH(birth_date) = 12
   AND DAY(birth_date) = 25)
-ORDER BY hire_date DESC;
+ORDER BY birth_date, hire_date DESC;
 
-SELECT first_name, last_name, DATEDIFF(NOW(), hire_date)
+SELECT CONCAT_WS(' ', first_name, last_name) AS Name, DATEDIFF(NOW(), hire_date) AS Hire_Days
 FROM employees
 WHERE YEAR(hire_date) BETWEEN 1990 AND 1999
   AND (MONTH(birth_date) = 12
     AND DAY(birth_date) = 25)
-ORDER BY hire_date DESC;
 
 
